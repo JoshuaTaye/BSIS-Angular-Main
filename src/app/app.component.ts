@@ -10,4 +10,6 @@ import {HeaderComponent} from './components/header/header.component';
 })
 export class AppComponent {
   title = 'BSIS-Frontend';
+  headerTitle: string = "HOME";
+  rightMenu: string = "Donor Clinic";
 }

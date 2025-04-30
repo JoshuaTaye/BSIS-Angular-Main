@@ -1,0 +1,29 @@
+
+
+<mat-menu #menuPanel="matMenu" class="custom-menu-width"> <!-- Optional: Add class for styling -->
+  <ng-container *ngFor="let item of menuItems">
+    <hr *ngIf="item.isSeparator">
+
+    <a *ngIf="item.link && !item.isSeparator"
+       mat-menu-item
+       [routerLink]="item.link">
+      <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+      <span>{{ item.text }}</span>
+    </a>
+
+    <button *ngIf="item.action && !item.link && !item.isSeparator"
+            mat-menu-item
+            (click)="item.action()">
+      <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+      <span>{{ item.text }}</span>
+    </button>
+
+    <span *ngIf="isDisplayOnly(item)" mat-menu-item>
+<!--          [disabled]="true"-->
+<!--    >-->
+       <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+       <span>{{ item.text }}</span>
+    </span>
+
+  </ng-container>
+</mat-menu>
