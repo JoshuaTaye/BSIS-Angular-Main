@@ -49,5 +49,19 @@ export class HeaderComponent {
     }
   ];
 
+  readonly combinedMenuItems: MenuItem[] = [
+    // Add a title or header item if desired
+    { text: 'Navigation', isSeparator: false},
+    ...this.headerMenuItems,
+    { isSeparator: true, text: '' }, // Separator between main and user items
+    { text: 'Account', isSeparator: false },
+    ...this.userProfileMenuItems
+  ];
+
+  get avatarLetter(): string {
+    return this.rightMenu.charAt(0).toUpperCase() || "S";
+  }
+
+
 
 }

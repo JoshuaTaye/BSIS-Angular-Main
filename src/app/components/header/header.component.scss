@@ -1,5 +1,14 @@
+@use '@angular/material' as mat;
+
 .header{
   background: #001E31;
   margin:0;
 }
+.avatar-button {
+  background-color: var(--mat-tertiary-container-color, #EADDFF);
 
+}
+
+.avatar-letter{
+  color: var(--mat-on-tertiary-container-color, #1D192B);
+}

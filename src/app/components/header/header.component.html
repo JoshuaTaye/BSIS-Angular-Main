@@ -1,39 +1,56 @@
 <header class="header h-15 text-white">
   <div class="flex h-full">
-    <div class="flex w-full justify-between px-5">
+    <div class="hidden sm:flex w-full justify-between px-5">
       <div class="flex items-center gap-x-7 h-full">
-      <a routerLink="/">
-        <img src="assets/images/bsis_logo.png" alt="bsis-logo" class="h-[40px]">
-      </a>
-      <app-menu #mainMenuComp="appMenu" [menuItems]="headerMenuItems"></app-menu>
-      <button type="button"
-              [matMenuTriggerFor]="mainMenuComp?.menuInstance ?? null"
-              (menuOpened)="isMainMenuOpen = true"
-              (menuClosed)="isMainMenuOpen = false"
-              class="text-white h-full">
-        <div class="text-white flex items-center h-full gap-x-1">
-          <div class="text-lg h-full flex items-center">{{ headerTitle }}</div>
-          <mat-icon> {{ isMainMenuOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
-          </mat-icon>
-        </div>
-      </button>
+        <a routerLink="/">
+          <img src="assets/images/bsis_logo.png" alt="bsis-logo" class="h-[40px]">
+        </a>
+        <app-menu #mainMenuComp="appMenu" [menuItems]="headerMenuItems"></app-menu>
+        <button type="button"
+                [matMenuTriggerFor]="mainMenuComp?.menuInstance ?? null"
+                (menuOpened)="isMainMenuOpen = true"
+                (menuClosed)="isMainMenuOpen = false"
+                class="text-white h-full">
+          <div class="text-white flex items-center h-full gap-x-1">
+            <div class="text-lg h-full flex items-center">{{ headerTitle }}</div>
+            <mat-icon> {{ isMainMenuOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+            </mat-icon>
+          </div>
+        </button>
       </div>
       <div class="flex items-center gap-x-3 h-full">
         <app-menu #userMenuComp="appMenu" [menuItems]="userProfileMenuItems"></app-menu>
-      <mat-icon>account_circle</mat-icon>
-      <button type="button"
-              [matMenuTriggerFor]="userMenuComp?.menuInstance ?? null"
-              (menuOpened)="isUserMenuOpen = true"
-              (menuClosed)="isUserMenuOpen = false"
-              class="text-white h-full">
-        <div class="text-white flex items-center h-full gap-x-1">
-          <div class="text-lg h-full flex items-center">{{ rightMenu }}</div>
-          <mat-icon> {{ isUserMenuOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
-          </mat-icon>
-        </div>
-      </button>
+        <mat-icon>account_circle</mat-icon>
+        <button type="button"
+                [matMenuTriggerFor]="userMenuComp?.menuInstance ?? null"
+                (menuOpened)="isUserMenuOpen = true"
+                (menuClosed)="isUserMenuOpen = false"
+                class="text-white h-full">
+          <div class="text-white flex items-center h-full gap-x-1">
+            <div class="text-lg h-full flex items-center">{{ rightMenu }}</div>
+            <mat-icon> {{ isUserMenuOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+            </mat-icon>
+          </div>
+        </button>
       </div>
     </div>
+
+    <div class="flex sm:hidden w-full justify-between px-5 items-center h-full">
+      <button mat-icon-button class="text-white">
+        <div class="h-full flex items-center justify-center text-white">
+        <mat-icon class="h-full text-white">menu</mat-icon>
+        </div>
+      </button>
+      <app-menu #combinedMenuComp="appMenu" [menuItems]="combinedMenuItems"></app-menu>
+      <div class="h-full flex items-center" [matMenuTriggerFor]="combinedMenuComp.menuInstance">
+        <button mat-icon-button class="avatar-button">
+          <div class="text-white h-full flex items-center justify-center avatar-letter">
+            {{ avatarLetter }}
+          </div>
+        </button>
+      </div>
+    </div>
+
 
   </div>
 
