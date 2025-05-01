@@ -1,6 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './components/header/header.component';
+import { AlertsComponent } from "./components/alerts/alerts.component";
+import { TableComponent } from "./components/table/table.component";
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -15,7 +17,7 @@ import {MenuItem} from './interfaces/menu-item.interface';
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule,MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent,TableComponent, AlertsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
