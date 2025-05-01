@@ -11,14 +11,15 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import { DropdownComponent } from "./components/dropdown/dropdown.component";
+import { CheckboxComponent } from "./components/checkbox/checkbox.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule,
     NgClass,
-    HeaderComponent, MatSidenavModule,MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent,TableComponent, AlertsComponent, DropdownComponent],
+    HeaderComponent, MatSidenavModule, MatSidenavModule,
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
