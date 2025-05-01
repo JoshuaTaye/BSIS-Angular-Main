@@ -25,15 +25,15 @@ export class HeaderComponent {
   isUserMenuOpen: boolean = false;
 
   readonly headerMenuItems: MenuItem[] = [
-    { icon: 'home', text: 'Home', link: '/home' }, // Example link
-    { icon: 'group', text: 'Donors', link: '/donors' },
-    { icon: 'filter_alt', text: 'Components', link: '/components' },
-    { icon: 'science', text: 'Testing', link: '/testing' },
-    { icon: 'barcode_reader', text: 'Labelling', link: '/labelling' },
-    { icon: 'bloodtype', text: 'Inventory', link: '/inventory' },
-    { icon: 'analytics', text: 'Reports', link: '/reports' },
-    { icon: 'local_hospital', text: 'Mobile Clinic', link: '/mobile-clinic' },
-    { icon: 'apartment', text: 'Blood Banks', link: '/blood-banks' },
+    { icon: 'home', text: 'Home', route: '/home' }, // Example link
+    { icon: 'group', text: 'Donors', route: '/donors' },
+    { icon: 'filter_alt', text: 'Components', route: '/components' },
+    { icon: 'science', text: 'Testing', route: '/testing' },
+    { icon: 'barcode_reader', text: 'Labelling', route: '/labelling' },
+    { icon: 'bloodtype', text: 'Inventory', route: '/inventory' },
+    { icon: 'analytics', text: 'Reports', route: '/reports' },
+    { icon: 'local_hospital', text: 'Mobile Clinic', route: '/mobile-clinic' },
+    { icon: 'apartment', text: 'Blood Banks', route: '/blood-banks' },
     // {
     //   isSeparator: true,
     //   text: ''
@@ -44,16 +44,15 @@ export class HeaderComponent {
   ];
 
   readonly userProfileMenuItems: MenuItem[] = [
-    { icon: 'person', text: 'Account Settings', link: '/profile'},
+    { icon: 'person', text: 'Account Settings', route: '/profile'},
     { icon: 'logout', text: 'Logout'
     }
   ];
 
   readonly combinedMenuItems: MenuItem[] = [
-    // Add a title or header item if desired
     { text: 'Navigation', isSeparator: false},
     ...this.headerMenuItems,
-    { isSeparator: true, text: '' }, // Separator between main and user items
+    { isSeparator: true, text: '' },
     { text: 'Account', isSeparator: false },
     ...this.userProfileMenuItems
   ];
@@ -61,7 +60,5 @@ export class HeaderComponent {
   get avatarLetter(): string {
     return this.rightMenu.charAt(0).toUpperCase() || "S";
   }
-
-
 
 }
