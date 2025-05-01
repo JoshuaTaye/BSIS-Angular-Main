@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
+import { DropdownComponent } from "./components/dropdown/dropdown.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ import {MenuItem} from './interfaces/menu-item.interface';
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule,MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent,TableComponent, AlertsComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent,TableComponent, AlertsComponent, DropdownComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
