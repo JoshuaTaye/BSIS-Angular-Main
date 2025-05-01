@@ -1,1 +1,22 @@
-<p>sidebar works!</p>
+<div style="padding: 10px" class="toggle-button-container" [class.collapsed]="!isExpanded">
+  <button mat-icon-button (click)="onToggleClick()">
+    <mat-icon>{{ isExpanded ? 'menu_open' : 'menu' }}
+    </mat-icon>
+  </button>
+</div>
+<mat-nav-list class="sidenav-list">
+  <ng-container *ngFor="let item of navigationItems">
+    <mat-divider *ngIf="isExpanded && item.isSeparator" class="mat-divider"></mat-divider>
+    <a mat-list-item
+       *ngIf="item.icon"
+       [routerLink]="item.route"
+       routerLinkActive="active-list-item"
+       [class.item-with-icon]="item.icon"
+       [class.item-no-icon]="!item.icon">
+
+      <mat-icon matListItemIcon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+      <span *ngIf="isExpanded && item.icon" class="text-sm text-wrap">{{ item.text }}</span>
+    </a>
+    <div *ngIf="isExpanded && !item.icon && !item.isSeparator" class="text-sm pt-4 pb-1 px-4 text-wrap">{{ item.text }}</div>
+  </ng-container>
+</mat-nav-list>

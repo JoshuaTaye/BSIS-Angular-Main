@@ -26,7 +26,7 @@ export class MenuComponent {
   };
 
   isDisplayOnly(item: MenuItem): boolean {
-    return !item.link && !item.action && !item.isSeparator;
+    return !item.route && !item.action && !item.isSeparator;
   }
 
 
