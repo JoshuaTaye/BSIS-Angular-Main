@@ -13,6 +13,7 @@ import {MenuItem} from './interfaces/menu-item.interface';
 import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { CheckboxComponent } from "./components/checkbox/checkbox.component";
 import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
+import { DatepickerComponent } from "./components/datepicker/datepicker.component";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.compo
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent, RadiobuttonComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent, RadiobuttonComponent, DatepickerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
