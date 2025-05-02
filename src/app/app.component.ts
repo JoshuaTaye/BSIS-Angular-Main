@@ -12,6 +12,8 @@ import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { CheckboxComponent } from "./components/checkbox/checkbox.component";
+import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
+import { DatepickerComponent } from "./components/datepicker/datepicker.component";
 
 @Component({
   selector: 'app-root',
