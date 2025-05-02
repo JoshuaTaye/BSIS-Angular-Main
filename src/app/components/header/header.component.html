@@ -36,11 +36,12 @@
     </div>
 
     <div class="flex sm:hidden w-full justify-between px-5 items-center h-full">
-      <button mat-icon-button class="text-white">
+      <button mat-icon-button class="text-white" [matMenuTriggerFor]="mobileNavMenuComp.menuInstance">
         <div class="h-full flex items-center justify-center text-white">
-        <mat-icon class="h-full text-white">menu</mat-icon>
+          <mat-icon class="h-full text-white">menu</mat-icon>
         </div>
       </button>
+      <app-menu #mobileNavMenuComp="appMenu" [menuItems]="mobileNavItems"></app-menu>
       <app-menu #combinedMenuComp="appMenu" [menuItems]="combinedMenuItems"></app-menu>
       <div class="h-full flex items-center" [matMenuTriggerFor]="combinedMenuComp.menuInstance">
         <button mat-icon-button class="avatar-button">

@@ -1,14 +1,19 @@
 <main class="main h-screen">
-  <app-header [headerTitle]="headerTitle" [rightMenu]="rightMenu"/>
+  <app-header
+    [headerTitle]="headerTitle"
+    [rightMenu]="rightMenu"
+    [mobileNavItems]="currentNavItems"
+    />
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer
                 class="example-sidenav"
-                mode="side"
+                [mode]="isMobile ? 'over' : 'side'"
                 opened="true"
                 [ngClass]="{ 'sidenav-collapsed': !isSidenavExpanded }">
       <app-sidebar
         [navigationItems]="currentNavItems"
         [isExpanded]="isSidenavExpanded"
+        [currentPage]="currentPage"
         (toggleSidenav)="toggleSidenav()"
       />
     </mat-drawer>

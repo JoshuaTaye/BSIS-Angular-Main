@@ -19,7 +19,7 @@ import { CheckboxComponent } from "./components/checkbox/checkbox.component";
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -27,7 +27,7 @@ export class AppComponent {
   title = 'BSIS-Frontend';
   headerTitle: string = "HOME";
   rightMenu: string = "Donor Clinic";
-
+  isMobile: boolean = false;
   @ViewChild('drawer') drawer!: MatSidenav;
 
   isSidenavExpanded = true;
@@ -36,11 +36,17 @@ export class AppComponent {
     this.isSidenavExpanded = !this.isSidenavExpanded;
   }
 
+  // private checkScreenSize(): void {
+  //   this.isMobile = window.innerWidth <= 768;
+  // }
+  currentPage: string = "Settings";
+
+
   currentNavItems: MenuItem[] = [
-    {
-      isSeparator: true,
-      text: ''
-    },
+    // {
+    //   isSeparator: true,
+    //   text: ''
+    // },
     {text: 'DONORS RECORDS'},
     { icon: 'person', text: 'Manage Donors', route: '/home' },
     { icon: 'group', text: 'Duplicate Donors', route: '/find-donors' },
