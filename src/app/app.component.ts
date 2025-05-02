@@ -12,6 +12,7 @@ import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { CheckboxComponent } from "./components/checkbox/checkbox.component";
+import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ import { CheckboxComponent } from "./components/checkbox/checkbox.component";
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent, RadiobuttonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

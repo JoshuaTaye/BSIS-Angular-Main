@@ -1,0 +1,13 @@
+<mat-radio-group [value]="selected" [name]="name"
+  [disabled]="disabled"
+  (change)="onSelectionChange($event.value)"
+>
+  <mat-radio-button
+    *ngFor="let option of options"
+    [value]="option"
+    class="radio-item"
+  >
+    {{ option }}
+  </mat-radio-button>
+</mat-radio-group>
+
