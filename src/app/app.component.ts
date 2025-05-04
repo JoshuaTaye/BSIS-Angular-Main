@@ -14,10 +14,10 @@ import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { CheckboxComponent } from "./components/checkbox/checkbox.component";
 import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
 import { DatepickerComponent } from "./components/datepicker/datepicker.component";
+import {InputFieldComponent} from './components/input-field/input-field.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
@@ -41,7 +41,7 @@ export class AppComponent {
   // private checkScreenSize(): void {
   //   this.isMobile = window.innerWidth <= 768;
   // }
-  currentPage: string = "Settings";
+  currentPage: string = "Donors";
 
 
   currentNavItems: MenuItem[] = [
