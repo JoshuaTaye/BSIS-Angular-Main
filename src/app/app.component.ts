@@ -1,8 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './components/header/header.component';
-import { AlertsComponent } from "./components/alerts/alerts.component";
-import { TableComponent } from "./components/table/table.component";
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -10,11 +8,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
-import { DropdownComponent } from "./components/dropdown/dropdown.component";
-import { CheckboxComponent } from "./components/checkbox/checkbox.component";
-import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
-import { DatepickerComponent } from "./components/datepicker/datepicker.component";
-import {InputFieldComponent} from './components/input-field/input-field.component';
 
 @Component({
   selector: 'app-root',
