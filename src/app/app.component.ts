@@ -8,13 +8,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
+import {ButtonComponent} from './components/button/button.component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, ButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -24,7 +25,7 @@ export class AppComponent {
   rightMenu: string = "Donor Clinic";
   isMobile: boolean = false;
   @ViewChild('drawer') drawer!: MatSidenav;
-
+  exampleButtonDisabled = false;
   isSidenavExpanded = true;
 
   toggleSidenav(): void {
@@ -70,4 +71,9 @@ export class AppComponent {
     {text: 'DONOR APPOINTMENT'},
     { icon: 'event_available', text: 'Manage Donor Appointment', route: '/blood-stock' },
   ];
+  logSomething(): void {
+    console.log('Custom button clicked!');
+    this.exampleButtonDisabled = !this.exampleButtonDisabled;
+  }
 }
+

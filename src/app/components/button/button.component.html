@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="variant">
+  <button *ngSwitchCase="'flat'"
+          mat-flat-button
+          [type]="type"
+          [disabled]="disabled"
+          (click)="onClick($event)">
+    {{ label }}
+  </button>
+
+  <button *ngSwitchCase="'stroked'"
+          mat-stroked-button
+          [type]="type"
+          [disabled]="disabled"
+          (click)="onClick($event)">
+    {{ label }}
+  </button>
+</ng-container>
