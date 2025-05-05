@@ -30,15 +30,18 @@ $sidenav-collapsed-width: 60px;
   height: 100%;
   align-items: center;
   justify-content: center;
-  background: #FFFFFF;
-  border-left: 1px solid #dee2e6; // <-- ADD this line (adjust color/style as needed)
-}
-
-
-.example-sidenav-content {
-  height: 100%;
+  border-left: 1px solid #dee2e6;
   overflow-y: hidden;
 }
+
+
+
+@media (max-width: 768px) {
+  .example-sidenav {
+    display: none;
+  }
+}
+
 
 
 

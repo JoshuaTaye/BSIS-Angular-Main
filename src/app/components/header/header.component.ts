@@ -1,15 +1,17 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MenuComponent} from '../menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MenuItem} from '../../interfaces/menu-item.interface';
+import {CommonModule} from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     RouterLink,
+    CommonModule,
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
@@ -21,11 +23,13 @@ import {MenuItem} from '../../interfaces/menu-item.interface';
 export class HeaderComponent {
   @Input() headerTitle: string = "Home";
   @Input() rightMenu: string = "SuperUser";
+  @Input() mobileNavItems: MenuItem[] = [];
+
   isMainMenuOpen: boolean = false;
   isUserMenuOpen: boolean = false;
 
   readonly headerMenuItems: MenuItem[] = [
-    { icon: 'home', text: 'Home', route: '/home' }, // Example link
+    { icon: 'home', text: 'Home', route: '/home' },
     { icon: 'group', text: 'Donors', route: '/donors' },
     { icon: 'filter_alt', text: 'Components', route: '/components' },
     { icon: 'science', text: 'Testing', route: '/testing' },

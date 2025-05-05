@@ -1,8 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './components/header/header.component';
-import { AlertsComponent } from "./components/alerts/alerts.component";
-import { TableComponent } from "./components/table/table.component";
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -10,19 +8,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
-import { DropdownComponent } from "./components/dropdown/dropdown.component";
-import { CheckboxComponent } from "./components/checkbox/checkbox.component";
-import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
-import { DatepickerComponent } from "./components/datepicker/datepicker.component";
-import { TabsComponent } from "./components/tabs/tabs.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent, RadiobuttonComponent, DatepickerComponent, TabsComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -30,7 +22,7 @@ export class AppComponent {
   title = 'BSIS-Frontend';
   headerTitle: string = "HOME";
   rightMenu: string = "Donor Clinic";
-
+  isMobile: boolean = false;
   @ViewChild('drawer') drawer!: MatSidenav;
 
   isSidenavExpanded = true;
@@ -39,11 +31,17 @@ export class AppComponent {
     this.isSidenavExpanded = !this.isSidenavExpanded;
   }
 
+  // private checkScreenSize(): void {
+  //   this.isMobile = window.innerWidth <= 768;
+  // }
+  currentPage: string = "Donors";
+
+
   currentNavItems: MenuItem[] = [
-    {
-      isSeparator: true,
-      text: ''
-    },
+    // {
+    //   isSeparator: true,
+    //   text: ''
+    // },
     {text: 'DONORS RECORDS'},
     { icon: 'person', text: 'Manage Donors', route: '/home' },
     { icon: 'group', text: 'Duplicate Donors', route: '/find-donors' },
