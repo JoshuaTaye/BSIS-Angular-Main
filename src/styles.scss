@@ -33,3 +33,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
   border-right: none;
 }
+
+
+
+
+:root {
+  @include mat.tabs-overrides((
+    active-indicator-color: #2A638A,
+    active-label-text-color: #2A638A,
+    
+  ));
+}

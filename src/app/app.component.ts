@@ -14,6 +14,7 @@ import { DropdownComponent } from "./components/dropdown/dropdown.component";
 import { CheckboxComponent } from "./components/checkbox/checkbox.component";
 import { RadiobuttonComponent } from "./components/radiobutton/radiobutton.component";
 import { DatepickerComponent } from "./components/datepicker/datepicker.component";
+import { TabsComponent } from "./components/tabs/tabs.component";
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ import { DatepickerComponent } from "./components/datepicker/datepicker.componen
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent, RadiobuttonComponent, DatepickerComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, TableComponent, AlertsComponent, DropdownComponent, CheckboxComponent, RadiobuttonComponent, DatepickerComponent, TabsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
