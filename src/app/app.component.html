@@ -15,5 +15,23 @@
     <div class="example-sidenav-content flex flex-col gap-y-10 min-h-screen">
     </div>
   </mat-drawer-container>
+  <app-alerts [message]= "'Profile updated successfully!'" [type]="'success'"></app-alerts>
+  <app-dropdown [label]="'Select'"
+  [options]="['Pending', 'Approved', 'Rejected']"></app-dropdown>
+  <app-checkbox [label] = "'Historical Data Entry'"></app-checkbox>
+  <app-radiobutton [name]="'View Stock'" [options]="['In stock', 'Out of stock']"></app-radiobutton>
+  <app-datepicker [placeholder]="'Choose A Date'"></app-datepicker>
+  <app-tabs [tabLabels]="['Open batches', 'Closed batches']" [tabContents]="['Open Donation Batches', 'Closed Donation Batches']"></app-tabs>
+  <app-table [columns]="['Date', 'Blood_Group', 'Units_Requested', 'Requested_Date', 'Status']"
+  [columnHeaders]="['Date', 'Blood Group', 'Units Requested', 'Requested Date', 'Status']"
+  [dataSource]="[
+  { Date: '02/04/2025', Blood_Group: 'AB+', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+  { Date: '02/04/2025', Blood_Group: 'A+', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+  { Date: '02/04/2025', Blood_Group: 'B-', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+  { Date: '02/04/2025', Blood_Group: 'O+', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+  { Date: '02/04/2025', Blood_Group: 'A+', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+  { Date: '02/04/2025', Blood_Group: 'B-', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+  { Date: '02/04/2025', Blood_Group: 'O+', Units_Requested: '4', Requested_Date: '04/02/2024', Status: 'Approved'},
+]"></app-table>
 </main>
 <router-outlet/>
