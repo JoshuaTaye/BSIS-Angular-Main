@@ -17,7 +17,7 @@ import {InputFieldComponent} from './components/input-field/input-field.componen
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, ButtonComponent, DateRangePickerComponent, InputFieldComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
