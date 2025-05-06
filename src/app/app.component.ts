@@ -8,9 +8,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
-import {ButtonComponent} from './components/button/button.component';
-import {DateRangePickerComponent} from './components/date-range-picker/date-range-picker.component';
-import {InputFieldComponent} from './components/input-field/input-field.component';
 
 @Component({
   selector: 'app-root',
