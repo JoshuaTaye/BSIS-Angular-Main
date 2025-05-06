@@ -1,24 +1,21 @@
-<form class="example-form">
-  <div class="flex flex-col gap-5 px-10">
-  <mat-form-field appearance="outline" class="example-full-width">
-    <mat-label>{{ label }}</mat-label>
-    <ng-container *ngIf="!multiline; else textareaField">
-      <input
-        matInput
-        [type]="type"
-        [placeholder]="placeholder"
-        [value]="value"
-      />
-    </ng-container>
-
-    <ng-template #textareaField>
-    <textarea
-      matInput
-      [placeholder]="placeholder"
-      [value]="value"
-    ></textarea>
-    </ng-template>
-  </mat-form-field>
-
-  </div>
-</form>
+<mat-form-field appearance="outline" class="example-full-width w-full">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [type]="type === 'password' ? (hide() ? 'password' : 'text') : type"
+    [placeholder]="placeholder"
+    [value]="value"
+    #inputField
+    (input)="value = inputField.value"
+  />
+  <button
+    *ngIf="type === 'password'"
+    mat-icon-button
+    matSuffix
+    (click)="clickEvent($event)"
+    [attr.aria-label]="hide() ? 'Show password' : 'Hide password'"
+    [attr.aria-pressed]="!hide()"
+    type="button">
+    <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+</mat-form-field>

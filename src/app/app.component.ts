@@ -9,13 +9,15 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import {ButtonComponent} from './components/button/button.component';
+import {DateRangePickerComponent} from './components/date-range-picker/date-range-picker.component';
+import {InputFieldComponent} from './components/input-field/input-field.component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, ButtonComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, ButtonComponent, DateRangePickerComponent, InputFieldComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -27,6 +29,22 @@ export class AppComponent {
   @ViewChild('drawer') drawer!: MatSidenav;
   exampleButtonDisabled = false;
   isSidenavExpanded = true;
+
+
+  rangeStart: Date | null = null;
+  rangeEnd: Date | null = null;
+
+
+  handleStartDateChange(date: Date | null) {
+    this.rangeStart = date;
+    console.log('Start Date:', this.rangeStart);
+  }
+
+  handleEndDateChange(date: Date | null) {
+    this.rangeEnd = date;
+    console.log('End Date:', this.rangeEnd);
+  }
+
 
   toggleSidenav(): void {
     this.isSidenavExpanded = !this.isSidenavExpanded;

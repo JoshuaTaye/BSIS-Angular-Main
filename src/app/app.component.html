@@ -18,14 +18,27 @@
       />
     </mat-drawer>
     <div class="example-sidenav-content flex flex-col gap-y-10 min-h-screen">
-<!--      <app-button-->
+<!--      <app-date-range-picker-->
+<!--        label="Select Date Range"-->
+<!--        [(startDate)]="rangeStart"-->
+<!--        (startDateChange)="handleStartDateChange($event)"-->
+<!--        (endDateChange)="handleEndDateChange($event)"-->
+<!--      >-->
+<!--      </app-date-range-picker>-->
+        <app-input-field
+          type="password"
+          label="Password"
+          placeholder="Password"
+        >
+
+        </app-input-field>
+      <!--      <app-button-->
 <!--        label="Click Me!"-->
 <!--        variant="stroked"-->
 <!--        [disabled]="exampleButtonDisabled"-->
 <!--        (action)="logSomething()"-->
 <!--      >-->
 <!--      </app-button>-->
-
     </div>
   </mat-drawer-container>
 </main>
