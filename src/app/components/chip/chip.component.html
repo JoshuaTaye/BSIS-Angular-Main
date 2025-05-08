@@ -1,0 +1,12 @@
+<mat-chip-listbox [attr.aria-label]="label + ' selection'">
+  <mat-chip-option
+    [selected]="selected"
+    [disabled]="disabled"
+    [selectable]="selectable"
+    (selectionChange)="handleSelectionChange($event)"
+    (removed)="handleRemove($event)"
+    [removable]="removable">
+    {{ label }}
+    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+  </mat-chip-option>
+</mat-chip-listbox>
