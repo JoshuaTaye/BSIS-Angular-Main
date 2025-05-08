@@ -8,13 +8,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import { DividerComponent } from "./components/divider/divider.component";
+
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, MatDividerModule, MatListModule, DividerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
