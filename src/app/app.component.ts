@@ -10,10 +10,6 @@ import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-import { DividerComponent } from "./components/divider/divider.component";
-import { CardComponent } from "./components/card/card.component";
-import { TabsComponent } from "./components/tabs/tabs.component";
-import {ChipComponent} from './components/chip/chip.component';
 import {MatChipSelectionChange} from '@angular/material/chips';
 
 
