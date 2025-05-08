@@ -11,6 +11,7 @@ import {MenuItem} from './interfaces/menu-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { DividerComponent } from "./components/divider/divider.component";
+import { CardComponent } from "./components/card/card.component";
 
 
 @Component({
@@ -18,7 +19,7 @@ import { DividerComponent } from "./components/divider/divider.component";
   imports: [RouterOutlet, CommonModule,
     NgClass,
     HeaderComponent, MatSidenavModule, MatSidenavModule,
-    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, MatDividerModule, MatListModule, DividerComponent],
+    MatIconModule, MatButtonModule, MatToolbarModule, SidebarComponent, MatDividerModule, MatListModule, DividerComponent, CardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
