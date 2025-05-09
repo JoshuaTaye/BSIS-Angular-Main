@@ -2,45 +2,37 @@
 // For more information: https://material.angular.io/guide/theming
 @use "tailwindcss";
 @use '@angular/material' as mat;
-@use "./app/theme_theme-colors.scss" as bsis-theme;
+@use "app/bsis_theme-colors" as bsis-theme;
 
-
-
-///* You can add global styles to this file, and also import other style files */
-//
-//html, body {
-//  height: 100%;
-//  margin: 0;
-//  padding: 0;
-//}
 
 html{
-  @include mat.theme((
-    color:(
-      primary: bsis-theme.$primary-palette,
-      tertiary: bsis-theme.$tertiary-palette
-    )
-  ));
+color-scheme: light;
+@include mat.theme((
+  color: bsis-theme.$primary-palette,
+  typography: Roboto,
+  density: 0,
+));
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
 }
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+  font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.mdc-notched-outline__notch
-{
-  border-right: none;
-}
-
-
-
-
-:root {
-  @include mat.tabs-overrides((
-    active-indicator-color: #2A638A,
-    active-label-text-color: #2A638A,
-
+.error {
+  @include mat.theme-overrides((
+    primary: var(--mat-sys-error),
+    on-primary: var(--mat-sys-on-error),
   ));
 }
+
+.success {
+  @include mat.theme-overrides((
+    primary: var(-mat),
+    on-primary: var(--mat-sys-on-error)
+  ));
+}
+
