@@ -10,7 +10,7 @@ import {CommonModule, NgClass} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-import {MatChip, MatChipSelectionChange} from '@angular/material/chips';
+import {MatChipSelectionChange} from '@angular/material/chips';
 
 @Component({
   selector: 'app-root',
