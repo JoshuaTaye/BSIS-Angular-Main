@@ -16,14 +16,12 @@ import {IconService} from './shared/components/icons/icon.service';
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
     CommonModule,
     HeaderComponent,
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    SidebarComponent,
     MatDividerModule,
     HomePageComponent,
     MatListModule,
