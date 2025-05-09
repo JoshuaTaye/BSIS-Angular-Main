@@ -1,0 +1,17 @@
+<main>
+<div class="flex flex-col justify-center items-center py-10 w-full">
+  <h2 class="text-center">Welcome to BSIS - The Blood Safety Information System</h2>
+  <div class="grid grid-cols-1 my-10 gap-y-15 gap-x-10 max-w-[1440px] sm:grid-cols-2 md:grid-cols-3">
+    <div  *ngFor="let item of navItems">
+      <a [href]="item.route" class="flex flex-col items-center">
+      <div class="flex rounded-full w-[150px] my-5 h-[150px] justify-center items-center bg-[var(--mat-sys-primary-container)]">
+        <mat-icon style="width: 80px; height: 80px;"
+                  [svgIcon]="item.name"></mat-icon>
+      </div>
+      <h3>{{item.name}}</h3>
+      <div class="text-center px-20">{{item.description}}</div>
+      </a>
+    </div>
+  </div>
+</div>
+</main>

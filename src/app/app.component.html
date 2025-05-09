@@ -1,23 +1,24 @@
-<main class="main h-screen">
+<!--<main class="main h-screen">-->
   <app-header
     [headerTitle]="headerTitle"
     [rightMenu]="rightMenu"
     [mobileNavItems]="currentNavItems"
     />
-  <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer
-                class="example-sidenav"
-                [mode]="isMobile ? 'over' : 'side'"
-                opened="true"
-                [ngClass]="{ 'sidenav-collapsed': !isSidenavExpanded }">
-      <app-sidebar
-        [navigationItems]="currentNavItems"
-        [isExpanded]="isSidenavExpanded"
-        [currentPage]="currentPage"
-        (toggleSidenav)="toggleSidenav()"
-      />
-    </mat-drawer>
-    <div class="example-sidenav-content flex flex-col gap-y-10 min-h-screen">
+<!--  <mat-drawer-container class="example-container" autosize>-->
+<!--    <mat-drawer #drawer-->
+<!--                class="example-sidenav"-->
+<!--                [mode]="isMobile ? 'over' : 'side'"-->
+<!--                opened="true"-->
+<!--                [ngClass]="{ 'sidenav-collapsed': !isSidenavExpanded }">-->
+<!--      <app-sidebar-->
+<!--        [navigationItems]="currentNavItems"-->
+<!--        [isExpanded]="isSidenavExpanded"-->
+<!--        [currentPage]="currentPage"-->
+<!--        (toggleSidenav)="toggleSidenav()"-->
+<!--      />-->
+<!--    </mat-drawer>-->
+    <app-home-page/>
+<!--    <div class="min-h-screen w-screen">-->
       <!--      <app-date-range-picker-->
 <!--        label="Select Date Range"-->
 <!--        [(startDate)]="rangeStart"-->
@@ -30,7 +31,7 @@
 <!--          label="Password"-->
 <!--          placeholder="Password"-->
 <!--        >-->
-
+<!---->
 <!--        </app-input-field>-->
       <!--      <app-button-->
 <!--        label="Click Me!"-->
@@ -39,7 +40,8 @@
 <!--        (action)="logSomething()"-->
 <!--      >-->
 <!--      </app-button>-->
-    </div>
-  </mat-drawer-container>
-</main>
-<router-outlet/>
+<!--    </div>-->
+<!--  </mat-drawer-container>-->
+<!--</main>-->
+<!--<router-outlet/>-->
+<!---->

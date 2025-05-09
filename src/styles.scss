@@ -5,17 +5,32 @@
 @use "app/bsis_theme-colors" as bsis-theme;
 
 
-html{
-color-scheme: light;
-@include mat.theme((
-  color: bsis-theme.$primary-palette,
-  typography: Roboto,
-  density: 0,
-), $overrides:(
+@include mat.app-background();
+@include mat.elevation-classes();
+@include mat.typography-hierarchy(
+    mat.define-theme(
+        (
+          typography: (
+            use-system-variables: true,
+            system-variables-prefix: mat-sys,
+          ),
+        )
+    )
+);
+:root {
+  color-scheme: light;
+  @include mat.theme((
+    color: (
+      primary: bsis-theme.$primary-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ),
+  $overrides: (
     primary-container: #001e30,
-));
+  )
+  );
 }
-
 
 
 html, body {
@@ -25,7 +40,8 @@ html, body {
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .error {
   @include mat.theme-overrides((
@@ -34,10 +50,4 @@ body {
   ));
 }
 
-.success {
-  @include mat.theme-overrides((
-    primary: var(-mat),
-    on-primary: var(--mat-sys-on-error)
-  ));
-}
 

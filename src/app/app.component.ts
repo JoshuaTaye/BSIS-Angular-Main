@@ -11,13 +11,13 @@ import {MenuItem} from './interfaces/menu-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatChipSelectionChange} from '@angular/material/chips';
-
+import {HomePageComponent} from './core/components/home-page/home-page.component';
+import {IconService} from './shared/components/icons/icon.service';
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
     CommonModule,
-    NgClass,
     HeaderComponent,
     MatSidenavModule,
     MatIconModule,
@@ -25,6 +25,7 @@ import {MatChipSelectionChange} from '@angular/material/chips';
     MatToolbarModule,
     SidebarComponent,
     MatDividerModule,
+    HomePageComponent,
     MatListModule,
   ],
   templateUrl: './app.component.html',
@@ -32,6 +33,7 @@ import {MatChipSelectionChange} from '@angular/material/chips';
 })
 export class AppComponent {
   title = 'BSIS-Frontend';
+  constructor(private iconService: IconService) {}
   headerTitle: string = "HOME";
   rightMenu: string = "Donor Clinic";
   isMobile: boolean = false;
