@@ -1,12 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {SidebarComponent} from './shared/components/sidebar/sidebar.component';
-import {CommonModule, NgClass} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {MenuItem} from './interfaces/menu-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';

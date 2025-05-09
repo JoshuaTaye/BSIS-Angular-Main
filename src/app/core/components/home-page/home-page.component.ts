@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {MatButton} from '@angular/material/button';
-import {HeaderComponent} from '../../../shared/components/header/header.component';
 import {NgForOf} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 
