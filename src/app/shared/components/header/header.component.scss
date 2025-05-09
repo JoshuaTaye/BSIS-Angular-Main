@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+@use '../../../bsis_theme-colors' as bsis-theme;
+.header{
+  background: var(--mat-sys-primary-container);
+  margin:0;
+}
+.avatar-button {
+  background-color: var(#EADDFF);
+
+}
+
+.avatar-letter{
+  color: var(#1D192B);
+}

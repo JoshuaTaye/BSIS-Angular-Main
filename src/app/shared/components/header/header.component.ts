@@ -4,7 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MenuComponent} from '../menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
-import {MenuItem} from '../../interfaces/menu-item.interface';
+import {MenuItem} from '../../../interfaces/menu-item.interface';
 import {CommonModule} from '@angular/common';
 @Component({
   selector: 'app-header',

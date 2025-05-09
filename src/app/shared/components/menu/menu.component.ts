@@ -3,7 +3,7 @@ import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {MenuItem} from '../../interfaces/menu-item.interface';
+import {MenuItem} from '../../../interfaces/menu-item.interface';
 
 @Component({
   selector: 'app-menu',

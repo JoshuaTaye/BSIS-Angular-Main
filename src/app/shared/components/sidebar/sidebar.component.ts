@@ -5,7 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {MatIconButton} from '@angular/material/button';
-import {MenuItem} from '../../interfaces/menu-item.interface';
+import {MenuItem} from '../../../interfaces/menu-item.interface';
 import {MatDividerModule} from '@angular/material/divider';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
