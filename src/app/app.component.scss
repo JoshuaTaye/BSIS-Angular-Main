@@ -14,9 +14,10 @@ $sidenav-expanded-width: 260px;
 $sidenav-collapsed-width: 60px;
 
 .example-sidenav {
+  border-radius: 0;
   flex: 0 0 $sidenav-expanded-width;
   overflow-x: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 2s ease-in-out;
   &.sidenav-collapsed {
     width: $sidenav-collapsed-width;
   }
@@ -29,7 +30,6 @@ $sidenav-collapsed-width: 60px;
   align-items: center;
   justify-content: center;
   height: 100%;
-  border-left: 1px solid #dee2e6;
   overflow: hidden;
 }
 
