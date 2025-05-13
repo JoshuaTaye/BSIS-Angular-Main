@@ -1,17 +1,22 @@
-<main>
-<div class="flex flex-col justify-center items-center py-10 w-full">
-  <h2 class="text-center">Welcome to BSIS - The Blood Safety Information System</h2>
-  <div class="grid grid-cols-1 my-10 gap-y-15 gap-x-10 max-w-[1440px] sm:grid-cols-2 md:grid-cols-3">
-    <div  *ngFor="let item of navItems">
-      <a [href]="item.route" class="flex flex-col items-center">
-      <div class="flex rounded-full w-[150px] my-5 h-[150px] justify-center items-center bg-[var(--mat-sys-primary-container)]">
-        <mat-icon style="width: 80px; height: 80px;"
-                  [svgIcon]="item.name"></mat-icon>
+<div class="w-full flex flex-col justify-between">
+  <div class="flex flex-col justify-center items-center py-10 w-full">
+    <h5 class="text-center">Welcome to BSIS - The Blood Safety Information System</h5>
+    <div class="grid grid-cols-1 my-5 gap-y-10 max-w-[1000px] sm:grid-cols-2 md:grid-cols-3">
+      <div class="flex justify-center items-center" *ngFor="let item of navItems">
+        <a [href]="item.route" class="flex flex-col justify-center items-center">
+          <div
+            class="flex rounded-full w-[120px] my-2 h-[120px] justify-center items-center bg-[var(--mat-sys-secondary-container)]">
+            <mat-icon style="width: 50px; height: 50px;"
+                      [svgIcon]="item.name"></mat-icon>
+          </div>
+          <h5>{{ item.name }}</h5>
+          <div class="text-center px-5 text-sm">{{ item.description }}</div>
+        </a>
       </div>
-      <h3>{{item.name}}</h3>
-      <div class="text-center px-20">{{item.description}}</div>
-      </a>
     </div>
   </div>
+  <div class="text-center mb-5 text-xs w-full py-5">
+    <div class="">©2014-2025<a class="text-[var(--mat-sys-primary)]" href="https://www.habtechsolution.com/">Habtech Solutions</a></div>
+    <div class="">Version: 1.4.0 / 1.4.0 | Build: a207fe /</div>
+  </div>
 </div>
-</main>

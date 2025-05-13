@@ -1,37 +1,36 @@
 html,body{
   margin:0;
   padding:0;
-  min-height: 100vh;
 }
 
+
 .example-container {
-  flex-grow: 1;
   display: flex;
-  overflow: hidden;
+  min-height: 100vh;
+  flex-grow: 1;
 }
 
 $sidenav-expanded-width: 260px;
 $sidenav-collapsed-width: 60px;
 
 .example-sidenav {
-  width: $sidenav-expanded-width;
+  flex: 0 0 $sidenav-expanded-width;
   overflow-x: hidden;
-  transition: all 2s ease-in-out;
-  border: none ;
-  border-radius: 0;
+  transition: all 0.3s ease-in-out;
   &.sidenav-collapsed {
     width: $sidenav-collapsed-width;
   }
 }
 
 .example-sidenav-content {
-  overflow-x: hidden;
+  min-height: 100vh;
+  flex: 1 1 auto;
   display: flex;
-  height: 100%;
   align-items: center;
   justify-content: center;
+  height: 100%;
   border-left: 1px solid #dee2e6;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 

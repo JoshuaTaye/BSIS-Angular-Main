@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, inject, ViewChild} from '@angular/core';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
@@ -9,8 +9,10 @@ import {MenuItem} from './interfaces/menu-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatChipSelectionChange} from '@angular/material/chips';
-import {HomePageComponent} from './core/components/home-page/home-page.component';
 import {IconService} from './shared/components/icons/icon.service';
+import {RouterOutlet} from '@angular/router';
+import {SidebarComponent} from './shared/components/sidebar/sidebar.component';
+import {NavItemsStore} from './shared/stores/navigation-items.store';
 @Component({
   selector: 'app-root',
   imports: [
@@ -21,8 +23,9 @@ import {IconService} from './shared/components/icons/icon.service';
     MatButtonModule,
     MatToolbarModule,
     MatDividerModule,
-    HomePageComponent,
     MatListModule,
+    RouterOutlet,
+    SidebarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -37,6 +40,20 @@ export class AppComponent {
   exampleButtonDisabled = false;
   isSidenavExpanded = true;
 
+  readonly currentNavItems = inject(NavItemsStore);
+  ngOnInit(): void {
+    const homeNavItems: MenuItem[] = [
+      {text: 'DONOR COMMUNICATIONS'},
+      { icon: 'outbox', text: 'View / Export Donor List', route: '/blood-stock' },
+      {
+        isSeparator: true,
+        text: ''
+      },
+      {text: 'DONOR APPOINTMENT'},
+      { icon: 'event_available', text: 'Manage Donor Appointment', route: '/blood-stock' },
+    ];
+    this.currentNavItems.setNavItems(homeNavItems);
+  }
 
   rangeStart: Date | null = null;
   rangeEnd: Date | null = null;
@@ -51,7 +68,10 @@ export class AppComponent {
     this.rangeEnd = date;
     console.log('End Date:', this.rangeEnd);
   }
-
+  tabLabelsApp: string[] = [
+    "sth",
+    "sth 2"
+  ]
 
   toggleSidenav(): void {
     this.isSidenavExpanded = !this.isSidenavExpanded;
@@ -63,42 +83,10 @@ export class AppComponent {
   currentPage: string = "Donors";
 
 
-  currentNavItems: MenuItem[] = [
-    // {
-    //   isSeparator: true,
-    //   text: ''
-    // },
-    {text: 'DONORS RECORDS'},
-    { icon: 'person', text: 'Manage Donors', route: '/home' },
-    { icon: 'group', text: 'Duplicate Donors', route: '/find-donors' },
-    {
-      isSeparator: true,
-      text: ''
-    },
-    {text: 'DONORS CLINIC'},
-    { icon: 'inventory_2', text: 'Manage Donation Batches', route: '/blood-stock' },
-    {
-      isSeparator: true,
-      text: ''
-    },
-    {text: 'POST DONATION'},
-    { icon: 'health_and_safety', text: 'Donor Counseling', route: '/blood-stock' },
-    {
-      isSeparator: true,
-      text: ''
-    },
-    {text: 'DONOR COMMUNICATIONS'},
-    { icon: 'outbox', text: 'View / Export Donor List', route: '/blood-stock' },
-    {
-      isSeparator: true,
-      text: ''
-    },
-    {text: 'DONOR APPOINTMENT'},
-    { icon: 'event_available', text: 'Manage Donor Appointment', route: '/blood-stock' },
-  ];
+
   logSomething(): void {
     console.log('Custom button clicked!');
-    this.exampleButtonDisabled = !this.exampleButtonDisabled;
+    // this.exampleButtonDisabled = !this.exampleButtonDisabled;
   }
   logChipRemoval(chipLabel: string): void {
     console.log(`Chip removed: ${chipLabel}`);

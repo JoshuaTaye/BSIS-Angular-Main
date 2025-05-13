@@ -4,7 +4,7 @@
 @use '@angular/material' as mat;
 @use "app/bsis_theme-colors" as bsis-theme;
 
-
+@include mat.core();
 @include mat.app-background();
 @include mat.elevation-classes();
 @include mat.typography-hierarchy(
@@ -27,7 +27,7 @@
     density: 0,
   ),
   $overrides: (
-    primary-container: #001e30,
+    secondary-container: #001e30,
   )
   );
 }
@@ -49,5 +49,44 @@ body {
     on-primary: var(--mat-sys-on-error),
   ));
 }
+
+$sidenav-expanded: 260px;
+$sidenav-collapsed: 60px;
+
+mat-drawer-container.example-container {
+  display: flex !important;
+}
+
+mat-drawer.example-sidenav {
+  flex: 0 0 $sidenav-expanded !important;
+  transition: flex-basis 0.3s ease !important;
+  overflow: hidden !important;
+
+  &.sidenav-collapsed {
+    flex-basis: $sidenav-collapsed !important;
+  }
+}
+
+mat-drawer-content.example-content {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.inner-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #dee2e6;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  mat-drawer.example-sidenav {
+    display: none !important;
+  }
+}
+
 
 
