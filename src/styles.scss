@@ -21,7 +21,9 @@
   color-scheme: light;
   @include mat.theme((
     color: (
-      primary: bsis-theme.$primary-palette,
+      primary:bsis-theme.$primary-palette,
+      tertiary: bsis-theme.$tertiary-palette,
+      theme-type: light,
     ),
     typography: Roboto,
     density: 0,
@@ -33,15 +35,16 @@
 }
 
 
-html, body {
-  height: 100%;
-  background-color: var(--mat-sys-background);
 
-  color: var(--mat-sys-on-background);
+html{
+  color-scheme: light dark;
+  --mat-sys-primary: #2A638A;
 }
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }
 
 .error {
